@@ -21,13 +21,13 @@ Completar formulario
     Input Text    id:firstName    ${FIRST_NAME}
     Input Text    id:lastName    ${LAST_NAME}
     Input Text    id:userEmail    ${EMAIL}
-    Click Element    xpath://label[contains(text(), ${GENDER})]
+    Click Element    xpath://input[@value='${GENDER}']/following-sibling::label
     Input Text    id:userNumber    ${PHONE}
     Wait Until Element Is Enabled    id:submit    10s
-    Click Element    id:submit
+    Click Button    id:submit
 
 Validar formulario enviado
-    Wait Until Element Is Visible    id:example-modal-sizes-title-lg    10s
+    Wait Until Element Is Visible    id:example-modal-sizes-title-lg    15s
     Element Should Contain    css.table-responsive    ${FIRST_NAME} ${LAST_NAME}
     Element Should Contain    css.table-responsive    ${EMAIL}
 

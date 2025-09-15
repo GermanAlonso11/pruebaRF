@@ -1,65 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-14T20:52:15.421908" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-14T21:58:12.496906" rpa="false" schemaversion="5">
 <suite id="s1" name="Form Test" source="c:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\form_test\form_test.robot">
 <kw name="Abrir el Navegador" owner="form_keywords" type="SETUP">
 <kw name="Get Webdriver Path" owner="webdriversync">
-<msg time="2025-09-14T20:52:15.913889" level="INFO">====== WebDriver manager ======</msg>
-<msg time="2025-09-14T20:52:16.534504" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
-<msg time="2025-09-14T20:52:16.734717" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
-<msg time="2025-09-14T20:52:16.923512" level="INFO">Driver [C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache</msg>
-<msg time="2025-09-14T20:52:16.923817" level="INFO">ChromeDriver path: C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe</msg>
-<msg time="2025-09-14T20:52:16.923950" level="INFO">${driver_path} = C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe</msg>
+<msg time="2025-09-14T21:58:12.987794" level="INFO">====== WebDriver manager ======</msg>
+<msg time="2025-09-14T21:58:13.608692" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
+<msg time="2025-09-14T21:58:13.798408" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
+<msg time="2025-09-14T21:58:13.987892" level="INFO">Driver [C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache</msg>
+<msg time="2025-09-14T21:58:13.988206" level="INFO">ChromeDriver path: C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe</msg>
+<msg time="2025-09-14T21:58:13.988337" level="INFO">${driver_path} = C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe</msg>
 <var>${driver_path}</var>
-<status status="PASS" start="2025-09-14T20:52:15.913632" elapsed="1.010369"/>
+<status status="PASS" start="2025-09-14T21:58:12.987596" elapsed="1.000790"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-09-14T20:52:16.924453" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
-<msg time="2025-09-14T20:52:16.924892" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<msg time="2025-09-14T21:58:13.988848" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-09-14T21:58:13.989407" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>executable_path=${driver_path}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-09-14T20:52:16.924184" elapsed="5.246968"/>
+<status status="PASS" start="2025-09-14T21:58:13.988569" elapsed="6.736595"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-09-14T20:52:22.171414" elapsed="0.018246"/>
+<status status="PASS" start="2025-09-14T21:58:20.725393" elapsed="0.023855"/>
 </kw>
-<status status="PASS" start="2025-09-14T20:52:15.913102" elapsed="6.276738"/>
+<status status="PASS" start="2025-09-14T21:58:12.987159" elapsed="7.762281"/>
 </kw>
 <test id="s1-t1" name="Completar y validar formulario" line="11">
 <kw name="Log" owner="BuiltIn" type="SETUP">
-<msg time="2025-09-14T20:52:22.190711" level="INFO">Iniciando el test de prueba</msg>
+<msg time="2025-09-14T21:58:20.750187" level="INFO">Iniciando el test de prueba</msg>
 <arg>Iniciando el test de prueba</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-14T20:52:22.190539" elapsed="0.000721"/>
+<status status="PASS" start="2025-09-14T21:58:20.750033" elapsed="0.000653"/>
 </kw>
 <kw name="Completar formulario" owner="form_keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T20:52:22.192158" level="INFO">Typing text 'John' into text field 'id:firstName'.</msg>
+<msg time="2025-09-14T21:58:20.751639" level="INFO">Typing text 'John' into text field 'id:firstName'.</msg>
 <arg>id:firstName</arg>
 <arg>${FIRST_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T20:52:22.191827" elapsed="0.061827"/>
+<status status="PASS" start="2025-09-14T21:58:20.751279" elapsed="0.057871"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T20:52:22.254498" level="INFO">Typing text 'Doe' into text field 'id:lastName'.</msg>
+<msg time="2025-09-14T21:58:20.809606" level="INFO">Typing text 'Doe' into text field 'id:lastName'.</msg>
 <arg>id:lastName</arg>
 <arg>${LAST_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T20:52:22.254039" elapsed="0.067036"/>
+<status status="PASS" start="2025-09-14T21:58:20.809366" elapsed="0.042749"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T20:52:22.321590" level="INFO">Typing text 'john.doe@example' into text field 'id:userEmail'.</msg>
+<msg time="2025-09-14T21:58:20.852555" level="INFO">Typing text 'john.doe@example' into text field 'id:userEmail'.</msg>
 <arg>id:userEmail</arg>
 <arg>${EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T20:52:22.321317" elapsed="0.054551"/>
+<status status="PASS" start="2025-09-14T21:58:20.852323" elapsed="0.060948"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-14T20:52:22.376515" level="INFO">Clicking element 'xpath://label[contains(text(), Male)]'.</msg>
-<msg time="2025-09-14T20:52:23.648531" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-09-14T20:52:23.648806" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;label class="form-label" id="user...-label"&gt;Name&lt;/label&gt; is not clickable at point (521, 361). Other element would receive the click: &lt;form novalidate="" id="userForm" class=""&gt;...&lt;/form&gt;
+<msg time="2025-09-14T21:58:20.913843" level="INFO">Clicking element 'xpath://input[@value='Male']/following-sibling::label'.</msg>
+<arg>xpath://input[@value='${GENDER}']/following-sibling::label</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-14T21:58:20.913533" elapsed="0.038637"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-14T21:58:20.952621" level="INFO">Typing text '1234567890' into text field 'id:userNumber'.</msg>
+<arg>id:userNumber</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-14T21:58:20.952386" elapsed="0.044448"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>id:submit</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-09-14T21:58:20.997079" elapsed="0.012423"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-14T21:58:21.009871" level="INFO">Clicking button 'id:submit'.</msg>
+<msg time="2025-09-14T21:58:22.227660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-09-14T21:58:22.227937" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
   (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
 Stacktrace:
 	GetHandleVerifier [0x0x33d2a3+66419]
@@ -90,9 +109,9 @@ Stacktrace:
 	RtlGetAppContainerNamedObjectPath [0x0x771f827e+238]
 	(No symbol) [0x0]
 </msg>
-<arg>xpath://label[contains(text(), ${GENDER})]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-09-14T20:52:22.376203" elapsed="1.275553">ElementClickInterceptedException: Message: element click intercepted: Element &lt;label class="form-label" id="user...-label"&gt;Name&lt;/label&gt; is not clickable at point (521, 361). Other element would receive the click: &lt;form novalidate="" id="userForm" class=""&gt;...&lt;/form&gt;
+<arg>id:submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-09-14T21:58:21.009693" elapsed="1.221192">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
   (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
 Stacktrace:
 	GetHandleVerifier [0x0x33d2a3+66419]
@@ -124,24 +143,7 @@ Stacktrace:
 	(No symbol) [0x0]
 </status>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id:userNumber</arg>
-<arg>${PHONE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-09-14T20:52:23.651948" elapsed="0.000071"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>id:submit</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" start="2025-09-14T20:52:23.652099" elapsed="0.000051"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>id:submit</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-09-14T20:52:23.652249" elapsed="0.000043"/>
-</kw>
-<status status="FAIL" start="2025-09-14T20:52:22.191601" elapsed="1.460800">ElementClickInterceptedException: Message: element click intercepted: Element &lt;label class="form-label" id="user...-label"&gt;Name&lt;/label&gt; is not clickable at point (521, 361). Other element would receive the click: &lt;form novalidate="" id="userForm" class=""&gt;...&lt;/form&gt;
+<status status="FAIL" start="2025-09-14T21:58:20.751040" elapsed="1.480131">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
   (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
 Stacktrace:
 	GetHandleVerifier [0x0x33d2a3+66419]
@@ -174,15 +176,15 @@ Stacktrace:
 </status>
 </kw>
 <kw name="Validar formulario enviado" owner="form_keywords">
-<status status="NOT RUN" start="2025-09-14T20:52:23.652810" elapsed="0.000063"/>
+<status status="NOT RUN" start="2025-09-14T21:58:22.231541" elapsed="0.000078"/>
 </kw>
 <kw name="Log" owner="BuiltIn" type="TEARDOWN">
-<msg time="2025-09-14T20:52:23.653324" level="INFO">Finalizando caso de prueba</msg>
+<msg time="2025-09-14T21:58:22.232107" level="INFO">Finalizando caso de prueba</msg>
 <arg>Finalizando caso de prueba</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-14T20:52:23.653190" elapsed="0.000211"/>
+<status status="PASS" start="2025-09-14T21:58:22.231962" elapsed="0.000235"/>
 </kw>
-<status status="FAIL" start="2025-09-14T20:52:22.189972" elapsed="1.463629">ElementClickInterceptedException: Message: element click intercepted: Element &lt;label class="form-label" id="user...-label"&gt;Name&lt;/label&gt; is not clickable at point (521, 361). Other element would receive the click: &lt;form novalidate="" id="userForm" class=""&gt;...&lt;/form&gt;
+<status status="FAIL" start="2025-09-14T21:58:20.749549" elapsed="1.482890">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
   (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
 Stacktrace:
 	GetHandleVerifier [0x0x33d2a3+66419]
@@ -216,10 +218,10 @@ Stacktrace:
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-09-14T20:52:23.655680" elapsed="2.134621"/>
+<status status="PASS" start="2025-09-14T21:58:22.234041" elapsed="2.128213"/>
 </kw>
 <doc>Test suite for the form submission functionality</doc>
-<status status="FAIL" start="2025-09-14T20:52:15.425907" elapsed="10.364538"/>
+<status status="FAIL" start="2025-09-14T21:58:12.500716" elapsed="11.861683"/>
 </suite>
 <statistics>
 <total>
@@ -232,6 +234,6 @@ Stacktrace:
 </suite>
 </statistics>
 <errors>
-<msg time="2025-09-14T20:52:16.924453" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-09-14T21:58:13.988848" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
 </errors>
 </robot>
