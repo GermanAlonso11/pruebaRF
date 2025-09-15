@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.6 on win32)" generated="2025-09-15T10:35:43.515526" rpa="false" schemaversion="5">
+<suite id="s1" name="Post Request" source="C:\Users\Francisco Valenzuela\Documents\scripts german\personal\pruebaRF\my_project\tests\post_request\post_request.robot">
+<test id="s1-t1" name="Crear un nuevo post" line="13">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-15T10:35:43.636732" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api_session</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-15T10:35:43.636551" elapsed="0.000360"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-09-15T10:35:43.942431" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '69'} 
+ body={"title": "Mi nuevo post", "body", "Contenido del post", "userId": 1} 
+ </msg>
+<msg time="2025-09-15T10:35:43.942574" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Mon, 15 Sep 2025 17:35:44 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'access-control-expose-headers': 'Location', 'Cache-Control': 'no-cache', 'etag': 'W/"f-4jjw4Y8q22Yv1PV9m28FczJgjzk"', 'expires': '-1', 'location': 'https://jsonplaceholder.typicode.com/posts/101', 'nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'pragma': 'no-cache', 'report-to': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=2SILkpEIVPiXgLfJWdZZofcaaxz%2BwZlK3TvICXkZqJg%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1757957744"}],"max_age":3600}', 'reporting-endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=2SILkpEIVPiXgLfJWdZZofcaaxz%2BwZlK3TvICXkZqJg%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1757957744"', 'Server': 'cloudflare', 'vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'via': '2.0 heroku-router', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '998', 'x-ratelimit-reset': '1757957762', 'cf-cache-status': 'DYNAMIC', 'CF-RAY': '97f9e1dcf91a780e-IAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "id": 101
+} 
+ </msg>
+<msg time="2025-09-15T10:35:43.942690" level="INFO">C:\Users\Francisco Valenzuela\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-15T10:35:43.943140" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>${ENDPOINT}</arg>
+<arg>data=${PAYLOAD}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-15T10:35:43.637094" elapsed="0.306101"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-09-15T10:35:43.944304" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201.0</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-09-15T10:35:43.943643" elapsed="0.000767"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-15T10:35:43.945329" level="INFO">Respuesta: {
+  "id": 101
+}</msg>
+<arg>Respuesta: ${response.text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-15T10:35:43.944732" elapsed="0.000669"/>
+</kw>
+<status status="PASS" start="2025-09-15T10:35:43.635888" elapsed="0.309854"/>
+</test>
+<doc>Prueba de una solicitud Post usando RequestLibrary</doc>
+<status status="PASS" start="2025-09-15T10:35:43.517285" elapsed="0.429595"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Post Request" id="s1" pass="1" fail="0" skip="0">Post Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
