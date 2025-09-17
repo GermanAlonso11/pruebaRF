@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-16T18:03:28.581225" rpa="false" schemaversion="5">
+<suite id="s1" name="Keywords Custom" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\keywords_custom\keywords_custom.robot">
+<test id="s1-t1" name="Probar custom keywords" line="23">
+<kw name="Construir URL completa">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-09-16T18:03:28.606312" level="INFO">${url} = Separator= https://jsonplaceholder.typicode.com/ users/1</msg>
+<var>${url}</var>
+<arg>Separator=</arg>
+<arg>${BASE_URL}</arg>
+<arg>${endpoint}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-09-16T18:03:28.606170" elapsed="0.000166"/>
+</kw>
+<return>
+<value>${url}</value>
+<status status="PASS" start="2025-09-16T18:03:28.606387" elapsed="0.000030"/>
+</return>
+<msg time="2025-09-16T18:03:28.606494" level="INFO">${url} = Separator= https://jsonplaceholder.typicode.com/ users/1</msg>
+<var>${url}</var>
+<arg>users/1</arg>
+<doc>Concatena la url base con un endpoint</doc>
+<status status="PASS" start="2025-09-16T18:03:28.605851" elapsed="0.000657"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>URL Construida: ${url}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-16T18:03:28.606643" elapsed="0.000202"/>
+</kw>
+<kw name="Generar email aleatorio">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-09-16T18:03:28.607305" level="INFO">${random_string} = aolaosrw</msg>
+<var>${random_string}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-09-16T18:03:28.607149" elapsed="0.000172"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-09-16T18:03:28.607474" level="INFO">${email} = aolaosrw@example.com</msg>
+<var>${email}</var>
+<arg>SEPARATOR=</arg>
+<arg>${random_string}</arg>
+<arg>@example.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-09-16T18:03:28.607377" elapsed="0.000110"/>
+</kw>
+<return>
+<value>${email}</value>
+<status status="PASS" start="2025-09-16T18:03:28.607516" elapsed="0.000021"/>
+</return>
+<msg time="2025-09-16T18:03:28.607599" level="INFO">${email} = aolaosrw@example.com</msg>
+<var>${email}</var>
+<doc>Genera un email aleatorio con dominio fijo</doc>
+<status status="PASS" start="2025-09-16T18:03:28.607018" elapsed="0.000593"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Email generado: ${email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-09-16T18:03:28.607719" elapsed="0.000148"/>
+</kw>
+<status status="PASS" start="2025-09-16T18:03:28.605371" elapsed="0.002613"/>
+</test>
+<doc>Ejemplo de palabras clave personalizadas</doc>
+<status status="PASS" start="2025-09-16T18:03:28.582534" elapsed="0.025997"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Keywords Custom" id="s1" pass="1" fail="0" skip="0">Keywords Custom</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

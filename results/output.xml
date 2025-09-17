@@ -1,110 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.6 on win32)" generated="2025-09-15T16:49:13.065147" rpa="false" schemaversion="5">
-<suite id="s1" name="pruebaRF" source="C:\Users\Francisco Valenzuela\Documents\scripts german\personal\pruebaRF">
-<suite id="s1-s1" name="My Project" source="C:\Users\Francisco Valenzuela\Documents\scripts german\personal\pruebaRF\my_project">
-<suite id="s1-s1-s1" name="Tests" source="C:\Users\Francisco Valenzuela\Documents\scripts german\personal\pruebaRF\my_project\tests">
-<suite id="s1-s1-s1-s1" name="Get Request" source="C:\Users\Francisco Valenzuela\Documents\scripts german\personal\pruebaRF\my_project\tests\get_request">
-<suite id="s1-s1-s1-s1-s1" name="Get Request" source="C:\Users\Francisco Valenzuela\Documents\scripts german\personal\pruebaRF\my_project\tests\get_request\get_request.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Obtener datos del usuario" line="11">
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-16T23:26:17.293788" rpa="false" schemaversion="5">
+<suite id="s1" name="pruebaRF" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF">
+<suite id="s1-s1" name="My Project" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests">
+<suite id="s1-s1-s1-s1" name="apiTest" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\apiTest">
+<suite id="s1-s1-s1-s1-s1" name="pom apiTest" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\apiTest\pom_apiTest.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Peticion GET" line="5">
+<kw name="Obtener datos del usuario" owner="pom_apiPage">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-09-15T16:49:13.241652" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2025-09-16T23:26:17.609344" level="INFO">Creating Session using : alias=api_session, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>api_session</arg>
 <arg>${API_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-09-15T16:49:13.240957" elapsed="0.001467"/>
+<status status="PASS" start="2025-09-16T23:26:17.609108" elapsed="0.000430"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-09-15T16:49:13.583936" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/users/1 
- path_url=/users/1 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+<msg time="2025-09-16T23:26:17.616925" level="INFO">GET Request : url=http://localhost:3000/api/users/1 
+ path_url=/api/users/1 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2025-09-15T16:49:13.584419" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/users/1 
+<msg time="2025-09-16T23:26:17.617225" level="INFO">GET Response : url=http://localhost:3000/api/users/1 
  status=200, reason=OK 
- headers={'Date': 'Mon, 15 Sep 2025 23:49:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Cache-Control': 'max-age=43200', 'etag': 'W/"1fd-+2Y3G3w049iSZtw5t1mzSnunngE"', 'expires': '-1', 'nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'pragma': 'no-cache', 'report-to': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=NBsg2dCz5kDnga2bn4y61iZcDSF49HvBJv421SKChCw%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1757975182"}],"max_age":3600}', 'reporting-endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=NBsg2dCz5kDnga2bn4y61iZcDSF49HvBJv421SKChCw%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1757975182"', 'Server': 'cloudflare', 'vary': 'Origin, Accept-Encoding', 'via': '2.0 heroku-router', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '999', 'x-ratelimit-reset': '1757975222', 'Age': '4970', 'cf-cache-status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '97fc04fa5835468c-DFW', 'alt-svc': 'h3=":443"; ma=86400'} 
- body={
-  "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
-  },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
-} 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '216', 'ETag': 'W/"d8-6kcJ2BnK65bNXyDa0DMmXKrzLYo"', 'Date': 'Wed, 17 Sep 2025 06:26:17 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"message":"User fetched successfully","user":{"id":1,"name":"Alfredo Vale","email":"alfredo1@email.com","password":"123456","role_id":2,"createdAt":"2025-08-23T22:04:42.000Z","updatedAt":"2025-08-23T22:35:53.000Z"}} 
  </msg>
-<msg time="2025-09-15T16:49:13.584739" level="INFO">C:\Users\Francisco Valenzuela\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-09-15T16:49:13.585284" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-09-16T23:26:17.617544" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>api_session</arg>
 <arg>${ENDPOINT}</arg>
 <arg>expected_status=any</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-09-15T16:49:13.242995" elapsed="0.342808"/>
+<status status="PASS" start="2025-09-16T23:26:17.609644" elapsed="0.008061"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-09-15T16:49:13.587383" level="INFO">Argument types are:
+<msg time="2025-09-16T23:26:17.618399" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-09-15T16:49:13.586320" elapsed="0.001413"/>
+<status status="PASS" start="2025-09-16T23:26:17.617878" elapsed="0.000630"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-09-15T16:49:13.589238" level="INFO">Respuesta: {
-  "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz",
-  "address": {
-    "street": "Kulas Light",
-    "suite": "Apt. 556",
-    "city": "Gwenborough",
-    "zipcode": "92998-3874",
-    "geo": {
-      "lat": "-37.3159",
-      "lng": "81.1496"
-    }
-  },
-  "phone": "1-770-736-8031 x56442",
-  "website": "hildegard.org",
-  "company": {
-    "name": "Romaguera-Crona",
-    "catchPhrase": "Multi-layered client-server neural-net",
-    "bs": "harness real-time e-markets"
-  }
-}</msg>
+<msg time="2025-09-16T23:26:17.619023" level="INFO">Respuesta: {"message":"User fetched successfully","user":{"id":1,"name":"Alfredo Vale","email":"alfredo1@email.com","password":"123456","role_id":2,"createdAt":"2025-08-23T22:04:42.000Z","updatedAt":"2025-08-23T22:35:53.000Z"}}</msg>
 <arg>Respuesta: ${response.text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-15T16:49:13.588305" elapsed="0.001246"/>
+<status status="PASS" start="2025-09-16T23:26:17.618627" elapsed="0.000547"/>
 </kw>
-<status status="PASS" start="2025-09-15T16:49:13.235028" elapsed="0.354974"/>
+<status status="PASS" start="2025-09-16T23:26:17.608706" elapsed="0.010638"/>
+</kw>
+<status status="PASS" start="2025-09-16T23:26:17.606937" elapsed="0.012656"/>
 </test>
-<doc>Tests for GET requests using RequestLibrary</doc>
-<status status="PASS" start="2025-09-15T16:49:13.129067" elapsed="0.465514"/>
+<status status="PASS" start="2025-09-16T23:26:17.329054" elapsed="0.292650"/>
 </suite>
-<status status="PASS" start="2025-09-15T16:49:13.119910" elapsed="0.478860"/>
+<status status="PASS" start="2025-09-16T23:26:17.326595" elapsed="0.297080"/>
 </suite>
-<status status="PASS" start="2025-09-15T16:49:13.108220" elapsed="0.494440"/>
+<status status="PASS" start="2025-09-16T23:26:17.323573" elapsed="0.301787"/>
 </suite>
-<status status="PASS" start="2025-09-15T16:49:13.103704" elapsed="0.512926"/>
+<status status="PASS" start="2025-09-16T23:26:17.316603" elapsed="0.310423"/>
 </suite>
-<status status="PASS" start="2025-09-15T16:49:13.071581" elapsed="0.645260"/>
+<status status="PASS" start="2025-09-16T23:26:17.297749" elapsed="0.331720"/>
 </suite>
 <statistics>
 <total>
@@ -116,8 +72,8 @@
 <stat name="pruebaRF" id="s1" pass="1" fail="0" skip="0">pruebaRF</stat>
 <stat name="My Project" id="s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project</stat>
 <stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests</stat>
-<stat name="Get Request" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests.Get Request</stat>
-<stat name="Get Request" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests.Get Request.Get Request</stat>
+<stat name="apiTest" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests.apiTest</stat>
+<stat name="pom apiTest" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests.apiTest.pom apiTest</stat>
 </suite>
 </statistics>
 <errors>

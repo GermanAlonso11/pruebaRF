@@ -1,239 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-14T21:58:12.496906" rpa="false" schemaversion="5">
-<suite id="s1" name="Form Test" source="c:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\form_test\form_test.robot">
-<kw name="Abrir el Navegador" owner="form_keywords" type="SETUP">
-<kw name="Get Webdriver Path" owner="webdriversync">
-<msg time="2025-09-14T21:58:12.987794" level="INFO">====== WebDriver manager ======</msg>
-<msg time="2025-09-14T21:58:13.608692" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
-<msg time="2025-09-14T21:58:13.798408" level="INFO">Get LATEST chromedriver version for google-chrome</msg>
-<msg time="2025-09-14T21:58:13.987892" level="INFO">Driver [C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe] found in cache</msg>
-<msg time="2025-09-14T21:58:13.988206" level="INFO">ChromeDriver path: C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe</msg>
-<msg time="2025-09-14T21:58:13.988337" level="INFO">${driver_path} = C:\Users\alonz\.wdm\drivers\chromedriver\win64\140.0.7339.82\chromedriver-win32/chromedriver.exe</msg>
-<var>${driver_path}</var>
-<status status="PASS" start="2025-09-14T21:58:12.987596" elapsed="1.000790"/>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-16T23:26:16.287305" rpa="false" schemaversion="5">
+<suite id="s1" name="apiTest" source="c:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\apiTest">
+<suite id="s1-s1" name="pom apiTest" source="c:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\apiTest\pom_apiTest.robot">
+<test id="s1-s1-t1" name="Peticion GET" line="5">
+<kw name="Obtener datos del usuario" owner="pom_apiPage">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-16T23:26:16.600190" level="INFO">Creating Session using : alias=api_session, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api_session</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-16T23:26:16.599929" elapsed="0.001649"/>
 </kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:13.988848" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
-<msg time="2025-09-14T21:58:13.989407" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<arg>executable_path=${driver_path}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-09-14T21:58:13.988569" elapsed="6.736595"/>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-09-16T23:26:16.612127" level="INFO">GET Request : url=http://localhost:3000/api/users/1 
+ path_url=/api/users/1 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-09-16T23:26:16.612340" level="INFO">GET Response : url=http://localhost:3000/api/users/1 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '216', 'ETag': 'W/"d8-6kcJ2BnK65bNXyDa0DMmXKrzLYo"', 'Date': 'Wed, 17 Sep 2025 06:26:16 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"message":"User fetched successfully","user":{"id":1,"name":"Alfredo Vale","email":"alfredo1@email.com","password":"123456","role_id":2,"createdAt":"2025-08-23T22:04:42.000Z","updatedAt":"2025-08-23T22:35:53.000Z"}} 
+ </msg>
+<msg time="2025-09-16T23:26:16.612506" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>${ENDPOINT}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-16T23:26:16.601705" elapsed="0.010866"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.725393" elapsed="0.023855"/>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-09-16T23:26:16.613042" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-09-16T23:26:16.612718" elapsed="0.000401"/>
 </kw>
-<status status="PASS" start="2025-09-14T21:58:12.987159" elapsed="7.762281"/>
-</kw>
-<test id="s1-t1" name="Completar y validar formulario" line="11">
-<kw name="Log" owner="BuiltIn" type="SETUP">
-<msg time="2025-09-14T21:58:20.750187" level="INFO">Iniciando el test de prueba</msg>
-<arg>Iniciando el test de prueba</arg>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-16T23:26:16.613428" level="INFO">Respuesta: {"message":"User fetched successfully","user":{"id":1,"name":"Alfredo Vale","email":"alfredo1@email.com","password":"123456","role_id":2,"createdAt":"2025-08-23T22:04:42.000Z","updatedAt":"2025-08-23T22:35:53.000Z"}}</msg>
+<arg>Respuesta: ${response.text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.750033" elapsed="0.000653"/>
+<status status="PASS" start="2025-09-16T23:26:16.613197" elapsed="0.000295"/>
 </kw>
-<kw name="Completar formulario" owner="form_keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:20.751639" level="INFO">Typing text 'John' into text field 'id:firstName'.</msg>
-<arg>id:firstName</arg>
-<arg>${FIRST_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.751279" elapsed="0.057871"/>
+<status status="PASS" start="2025-09-16T23:26:16.599580" elapsed="0.013977"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:20.809606" level="INFO">Typing text 'Doe' into text field 'id:lastName'.</msg>
-<arg>id:lastName</arg>
-<arg>${LAST_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.809366" elapsed="0.042749"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:20.852555" level="INFO">Typing text 'john.doe@example' into text field 'id:userEmail'.</msg>
-<arg>id:userEmail</arg>
-<arg>${EMAIL}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.852323" elapsed="0.060948"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:20.913843" level="INFO">Clicking element 'xpath://input[@value='Male']/following-sibling::label'.</msg>
-<arg>xpath://input[@value='${GENDER}']/following-sibling::label</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.913533" elapsed="0.038637"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:20.952621" level="INFO">Typing text '1234567890' into text field 'id:userNumber'.</msg>
-<arg>id:userNumber</arg>
-<arg>${PHONE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.952386" elapsed="0.044448"/>
-</kw>
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>id:submit</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2025-09-14T21:58:20.997079" elapsed="0.012423"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-09-14T21:58:21.009871" level="INFO">Clicking button 'id:submit'.</msg>
-<msg time="2025-09-14T21:58:22.227660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-09-14T21:58:22.227937" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
-  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	GetHandleVerifier [0x0x33d2a3+66419]
-	GetHandleVerifier [0x0x33d2e4+66484]
-	(No symbol) [0x0x114bd3]
-	(No symbol) [0x0x164e40]
-	(No symbol) [0x0x1631a3]
-	(No symbol) [0x0x160c57]
-	(No symbol) [0x0x15fedd]
-	(No symbol) [0x0x1543c5]
-	(No symbol) [0x0x18101c]
-	(No symbol) [0x0x153e24]
-	(No symbol) [0x0x1811d4]
-	(No symbol) [0x0x1a28a1]
-	(No symbol) [0x0x180e16]
-	(No symbol) [0x0x1525ce]
-	(No symbol) [0x0x1534a4]
-	GetHandleVerifier [0x0x585ee3+2461619]
-	GetHandleVerifier [0x0x580f66+2441270]
-	GetHandleVerifier [0x0x366242+234258]
-	GetHandleVerifier [0x0x356208+168664]
-	GetHandleVerifier [0x0x35d1ad+197245]
-	GetHandleVerifier [0x0x3455f8+100040]
-	GetHandleVerifier [0x0x345792+100450]
-	GetHandleVerifier [0x0x32f74a+10266]
-	BaseThreadInitThunk [0x0x7518fcc9+25]
-	RtlGetAppContainerNamedObjectPath [0x0x771f82ae+286]
-	RtlGetAppContainerNamedObjectPath [0x0x771f827e+238]
-	(No symbol) [0x0]
-</msg>
-<arg>id:submit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-09-14T21:58:21.009693" elapsed="1.221192">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
-  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	GetHandleVerifier [0x0x33d2a3+66419]
-	GetHandleVerifier [0x0x33d2e4+66484]
-	(No symbol) [0x0x114bd3]
-	(No symbol) [0x0x164e40]
-	(No symbol) [0x0x1631a3]
-	(No symbol) [0x0x160c57]
-	(No symbol) [0x0x15fedd]
-	(No symbol) [0x0x1543c5]
-	(No symbol) [0x0x18101c]
-	(No symbol) [0x0x153e24]
-	(No symbol) [0x0x1811d4]
-	(No symbol) [0x0x1a28a1]
-	(No symbol) [0x0x180e16]
-	(No symbol) [0x0x1525ce]
-	(No symbol) [0x0x1534a4]
-	GetHandleVerifier [0x0x585ee3+2461619]
-	GetHandleVerifier [0x0x580f66+2441270]
-	GetHandleVerifier [0x0x366242+234258]
-	GetHandleVerifier [0x0x356208+168664]
-	GetHandleVerifier [0x0x35d1ad+197245]
-	GetHandleVerifier [0x0x3455f8+100040]
-	GetHandleVerifier [0x0x345792+100450]
-	GetHandleVerifier [0x0x32f74a+10266]
-	BaseThreadInitThunk [0x0x7518fcc9+25]
-	RtlGetAppContainerNamedObjectPath [0x0x771f82ae+286]
-	RtlGetAppContainerNamedObjectPath [0x0x771f827e+238]
-	(No symbol) [0x0]
-</status>
-</kw>
-<status status="FAIL" start="2025-09-14T21:58:20.751040" elapsed="1.480131">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
-  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	GetHandleVerifier [0x0x33d2a3+66419]
-	GetHandleVerifier [0x0x33d2e4+66484]
-	(No symbol) [0x0x114bd3]
-	(No symbol) [0x0x164e40]
-	(No symbol) [0x0x1631a3]
-	(No symbol) [0x0x160c57]
-	(No symbol) [0x0x15fedd]
-	(No symbol) [0x0x1543c5]
-	(No symbol) [0x0x18101c]
-	(No symbol) [0x0x153e24]
-	(No symbol) [0x0x1811d4]
-	(No symbol) [0x0x1a28a1]
-	(No symbol) [0x0x180e16]
-	(No symbol) [0x0x1525ce]
-	(No symbol) [0x0x1534a4]
-	GetHandleVerifier [0x0x585ee3+2461619]
-	GetHandleVerifier [0x0x580f66+2441270]
-	GetHandleVerifier [0x0x366242+234258]
-	GetHandleVerifier [0x0x356208+168664]
-	GetHandleVerifier [0x0x35d1ad+197245]
-	GetHandleVerifier [0x0x3455f8+100040]
-	GetHandleVerifier [0x0x345792+100450]
-	GetHandleVerifier [0x0x32f74a+10266]
-	BaseThreadInitThunk [0x0x7518fcc9+25]
-	RtlGetAppContainerNamedObjectPath [0x0x771f82ae+286]
-	RtlGetAppContainerNamedObjectPath [0x0x771f827e+238]
-	(No symbol) [0x0]
-</status>
-</kw>
-<kw name="Validar formulario enviado" owner="form_keywords">
-<status status="NOT RUN" start="2025-09-14T21:58:22.231541" elapsed="0.000078"/>
-</kw>
-<kw name="Log" owner="BuiltIn" type="TEARDOWN">
-<msg time="2025-09-14T21:58:22.232107" level="INFO">Finalizando caso de prueba</msg>
-<arg>Finalizando caso de prueba</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-14T21:58:22.231962" elapsed="0.000235"/>
-</kw>
-<status status="FAIL" start="2025-09-14T21:58:20.749549" elapsed="1.482890">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button id="submit" type="submit" class="btn btn-primary"&gt;...&lt;/button&gt; is not clickable at point (1366, 882). Other element would receive the click: &lt;div id="adplus-anchor" data-google-query-id="CIfCxM_92Y8DFeTg_QUda9weGw"&gt;...&lt;/div&gt;
-  (Session info: chrome=140.0.7339.128); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
-Stacktrace:
-	GetHandleVerifier [0x0x33d2a3+66419]
-	GetHandleVerifier [0x0x33d2e4+66484]
-	(No symbol) [0x0x114bd3]
-	(No symbol) [0x0x164e40]
-	(No symbol) [0x0x1631a3]
-	(No symbol) [0x0x160c57]
-	(No symbol) [0x0x15fedd]
-	(No symbol) [0x0x1543c5]
-	(No symbol) [0x0x18101c]
-	(No symbol) [0x0x153e24]
-	(No symbol) [0x0x1811d4]
-	(No symbol) [0x0x1a28a1]
-	(No symbol) [0x0x180e16]
-	(No symbol) [0x0x1525ce]
-	(No symbol) [0x0x1534a4]
-	GetHandleVerifier [0x0x585ee3+2461619]
-	GetHandleVerifier [0x0x580f66+2441270]
-	GetHandleVerifier [0x0x366242+234258]
-	GetHandleVerifier [0x0x356208+168664]
-	GetHandleVerifier [0x0x35d1ad+197245]
-	GetHandleVerifier [0x0x3455f8+100040]
-	GetHandleVerifier [0x0x345792+100450]
-	GetHandleVerifier [0x0x32f74a+10266]
-	BaseThreadInitThunk [0x0x7518fcc9+25]
-	RtlGetAppContainerNamedObjectPath [0x0x771f82ae+286]
-	RtlGetAppContainerNamedObjectPath [0x0x771f827e+238]
-	(No symbol) [0x0]
-</status>
+<status status="PASS" start="2025-09-16T23:26:16.599085" elapsed="0.014731"/>
 </test>
-<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-09-14T21:58:22.234041" elapsed="2.128213"/>
-</kw>
-<doc>Test suite for the form submission functionality</doc>
-<status status="FAIL" start="2025-09-14T21:58:12.500716" elapsed="11.861683"/>
+<status status="PASS" start="2025-09-16T23:26:16.304940" elapsed="0.309597"/>
+</suite>
+<status status="PASS" start="2025-09-16T23:26:16.291157" elapsed="0.324179"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Form Test" id="s1" pass="0" fail="1" skip="0">Form Test</stat>
+<stat name="apiTest" id="s1" pass="1" fail="0" skip="0">apiTest</stat>
+<stat name="pom apiTest" id="s1-s1" pass="1" fail="0" skip="0">apiTest.pom apiTest</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-09-14T21:58:13.988848" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
 </errors>
 </robot>

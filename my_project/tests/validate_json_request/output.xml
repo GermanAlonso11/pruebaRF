@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-16T16:51:18.313242" rpa="false" schemaversion="5">
+<suite id="s1" name="Validate Json Request" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\validate_json_request\validate_json_request.robot">
+<test id="s1-t1" name="Validar respuestas json anidadas" line="14">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-16T16:51:18.874503" level="INFO">Creating Session using : alias=api_session, url=https://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api_session</arg>
+<arg>${API_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-16T16:51:18.874356" elapsed="0.000291"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-09-16T16:51:19.098943" level="INFO">GET Request : url=https://jsonplaceholder.typicode.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-09-16T16:51:19.099080" level="INFO">GET Response : url=https://jsonplaceholder.typicode.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 16 Sep 2025 23:51:17 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'Cache-Control': 'max-age=43200', 'etag': 'W/"1fd-+2Y3G3w049iSZtw5t1mzSnunngE"', 'expires': '-1', 'nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'pragma': 'no-cache', 'report-to': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=5f7YCRELVlD0Sl%2FwxpKjLcbG6OkgfCZ%2FbjWzysV4r%2Bk%3D\\u0026sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d\\u0026ts=1757036875"}],"max_age":3600}', 'reporting-endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=5f7YCRELVlD0Sl%2FwxpKjLcbG6OkgfCZ%2FbjWzysV4r%2Bk%3D&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;ts=1757036875"', 'Server': 'cloudflare', 'vary': 'Origin, Accept-Encoding', 'via': '2.0 heroku-router', 'x-content-type-options': 'nosniff', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '999', 'x-ratelimit-reset': '1757036883', 'Age': '28730', 'cf-cache-status': 'HIT', 'Content-Encoding': 'gzip', 'CF-RAY': '980445601cbef514-LAX', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+} 
+ </msg>
+<msg time="2025-09-16T16:51:19.099144" level="INFO">C:\Users\alonz\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jsonplaceholder.typicode.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-09-16T16:51:19.099455" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api_session</arg>
+<arg>${ENDPOINT}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-09-16T16:51:18.874846" elapsed="0.224638"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2025-09-16T16:51:19.100063" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2025-09-16T16:51:19.099725" elapsed="0.000385"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2025-09-16T16:51:19.100286" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2025-09-16T16:51:19.100745" level="INFO">To JSON using : content={
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+} </msg>
+<msg time="2025-09-16T16:51:19.100768" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2025-09-16T16:51:19.100813" level="INFO">${json} = {'id': 1, 'name': 'Leanne Graham', 'username': 'Bret', 'email': 'Sincere@april.biz', 'address': {'street': 'Kulas Light', 'suite': 'Apt. 556', 'city': 'Gwenborough', 'zipcode': '92998-3874', 'geo': {'...</msg>
+<var>${json}</var>
+<arg>${response.text}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2025-09-16T16:51:19.100256" elapsed="0.000570"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-09-16T16:51:19.112855" level="INFO">${city} = ['Gwenborough']</msg>
+<var>${city}</var>
+<arg>${json}</arg>
+<arg>$.address.city</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-09-16T16:51:19.100953" elapsed="0.011947"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${city[0]}</arg>
+<arg>Gwenborough</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-09-16T16:51:19.113077" elapsed="0.000281"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-09-16T16:51:19.122015" level="INFO">${latitude} = ['-37.3159']</msg>
+<var>${latitude}</var>
+<arg>${json}</arg>
+<arg>$.address.geo.lat</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-09-16T16:51:19.113475" elapsed="0.008576"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${latitude[0]}</arg>
+<arg>-37.3159</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-09-16T16:51:19.122261" elapsed="0.000302"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-16T16:51:19.122895" level="INFO">Ciudad: Gwenborough</msg>
+<arg>Ciudad: ${city[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-16T16:51:19.122679" elapsed="0.000241"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-09-16T16:51:19.123227" level="INFO">Latitud: -37.3159</msg>
+<arg>Latitud: ${latitude[0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-09-16T16:51:19.123027" elapsed="0.000225"/>
+</kw>
+<status status="PASS" start="2025-09-16T16:51:18.873562" elapsed="0.249816"/>
+</test>
+<doc>Test for API json requests</doc>
+<status status="PASS" start="2025-09-16T16:51:18.314283" elapsed="0.809616"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Validate Json Request" id="s1" pass="1" fail="0" skip="0">Validate Json Request</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-09-16T16:51:19.100286" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
