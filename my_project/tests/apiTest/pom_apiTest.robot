@@ -1,6 +1,11 @@
 *** Settings ***
 Resource    ../../resources/page/pom_apiPage.robot
 
+
+
 *** Test Cases ***
-Peticion GET
-    Obtener datos del usuario
+GET Roles
+    Obtener todos los roles
+
+GET Users
+    Obtener todos los usuarios

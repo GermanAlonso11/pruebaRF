@@ -1,79 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-16T23:26:17.293788" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-09-18T11:51:51.913825" rpa="false" schemaversion="5">
 <suite id="s1" name="pruebaRF" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF">
 <suite id="s1-s1" name="My Project" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project">
 <suite id="s1-s1-s1" name="Tests" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests">
 <suite id="s1-s1-s1-s1" name="apiTest" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\apiTest">
 <suite id="s1-s1-s1-s1-s1" name="pom apiTest" source="C:\Users\alonz\OneDrive\Escritorio\node\robotframework\pruebaRF\my_project\tests\apiTest\pom_apiTest.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Peticion GET" line="5">
-<kw name="Obtener datos del usuario" owner="pom_apiPage">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-09-16T23:26:17.609344" level="INFO">Creating Session using : alias=api_session, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>api_session</arg>
-<arg>${API_URL}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-09-16T23:26:17.609108" elapsed="0.000430"/>
-</kw>
+<test id="s1-s1-s1-s1-s1-t1" name="GET Users" line="9">
+<kw name="Obtener todos los usuarios" owner="pom_apiPage">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2025-09-16T23:26:17.616925" level="INFO">GET Request : url=http://localhost:3000/api/users/1 
- path_url=/api/users/1 
- headers={'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-09-16T23:26:17.617225" level="INFO">GET Response : url=http://localhost:3000/api/users/1 
- status=200, reason=OK 
- headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '216', 'ETag': 'W/"d8-6kcJ2BnK65bNXyDa0DMmXKrzLYo"', 'Date': 'Wed, 17 Sep 2025 06:26:17 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={"message":"User fetched successfully","user":{"id":1,"name":"Alfredo Vale","email":"alfredo1@email.com","password":"123456","role_id":2,"createdAt":"2025-08-23T22:04:42.000Z","updatedAt":"2025-08-23T22:35:53.000Z"}} 
- </msg>
-<msg time="2025-09-16T23:26:17.617544" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2025-09-18T11:51:52.223319" level="FAIL">Non-existing index or alias 'api_session'.</msg>
 <var>${response}</var>
 <arg>api_session</arg>
-<arg>${ENDPOINT}</arg>
-<arg>expected_status=any</arg>
+<arg>${ENDPOINT_user}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2025-09-16T23:26:17.609644" elapsed="0.008061"/>
+<status status="FAIL" start="2025-09-18T11:51:52.223014" elapsed="0.003073">Non-existing index or alias 'api_session'.</status>
 </kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-09-16T23:26:17.618399" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response.status_code}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-09-16T23:26:17.617878" elapsed="0.000630"/>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2025-09-18T11:51:52.226188" elapsed="0.000116"/>
+</return>
+<status status="FAIL" start="2025-09-18T11:51:52.222610" elapsed="0.003785">Non-existing index or alias 'api_session'.</status>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-09-16T23:26:17.619023" level="INFO">Respuesta: {"message":"User fetched successfully","user":{"id":1,"name":"Alfredo Vale","email":"alfredo1@email.com","password":"123456","role_id":2,"createdAt":"2025-08-23T22:04:42.000Z","updatedAt":"2025-08-23T22:35:53.000Z"}}</msg>
-<arg>Respuesta: ${response.text}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-09-16T23:26:17.618627" elapsed="0.000547"/>
-</kw>
-<status status="PASS" start="2025-09-16T23:26:17.608706" elapsed="0.010638"/>
-</kw>
-<status status="PASS" start="2025-09-16T23:26:17.606937" elapsed="0.012656"/>
+<status status="FAIL" start="2025-09-18T11:51:52.220544" elapsed="0.006048">Non-existing index or alias 'api_session'.</status>
 </test>
-<status status="PASS" start="2025-09-16T23:26:17.329054" elapsed="0.292650"/>
+<status status="FAIL" start="2025-09-18T11:51:51.942789" elapsed="0.286369"/>
 </suite>
-<status status="PASS" start="2025-09-16T23:26:17.326595" elapsed="0.297080"/>
+<status status="FAIL" start="2025-09-18T11:51:51.940099" elapsed="0.294214"/>
 </suite>
-<status status="PASS" start="2025-09-16T23:26:17.323573" elapsed="0.301787"/>
+<status status="FAIL" start="2025-09-18T11:51:51.935488" elapsed="0.300802"/>
 </suite>
-<status status="PASS" start="2025-09-16T23:26:17.316603" elapsed="0.310423"/>
+<status status="FAIL" start="2025-09-18T11:51:51.932728" elapsed="0.307831"/>
 </suite>
-<status status="PASS" start="2025-09-16T23:26:17.297749" elapsed="0.331720"/>
+<status status="FAIL" start="2025-09-18T11:51:51.917315" elapsed="0.324956"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="pruebaRF" id="s1" pass="1" fail="0" skip="0">pruebaRF</stat>
-<stat name="My Project" id="s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project</stat>
-<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests</stat>
-<stat name="apiTest" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests.apiTest</stat>
-<stat name="pom apiTest" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">pruebaRF.My Project.Tests.apiTest.pom apiTest</stat>
+<stat name="pruebaRF" id="s1" pass="0" fail="1" skip="0">pruebaRF</stat>
+<stat name="My Project" id="s1-s1" pass="0" fail="1" skip="0">pruebaRF.My Project</stat>
+<stat name="Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">pruebaRF.My Project.Tests</stat>
+<stat name="apiTest" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">pruebaRF.My Project.Tests.apiTest</stat>
+<stat name="pom apiTest" id="s1-s1-s1-s1-s1" pass="0" fail="1" skip="0">pruebaRF.My Project.Tests.apiTest.pom apiTest</stat>
 </suite>
 </statistics>
 <errors>
